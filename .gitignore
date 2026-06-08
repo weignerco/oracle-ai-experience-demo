@@ -1,0 +1,58 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Streamlit
+fraud-buster-app/.streamlit/secrets.toml
+
+# Database & Security
+**/adb_wallet/
+**/*.sso
+**/*.p12
+**/*.pem
+**/*.jks
+**/ojdbc.properties
+**/tnsnames.ora
+**/sqlnet.ora
+secrets.md
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project Housekeeping
+.gemini/
+run-the-app.txt
+event-photos/
+fraud-buster-app/appv2.py
+fraud-buster-app/appv3.py
+database/adb-ddl-structure-1.txt
+database/adb-ddl-structure.txt
+database/secrets.md

@@ -67,7 +67,7 @@ Leaderboard ranks players by total score, with faster total time as a tie-breake
 Leaderboard should also display the score tally for "AI vs Humans"
 
 ## Sample Cases
-- Generate 30 random sample cases from identified industries and store in the autonomous database
+- Generate 100 random sample cases from identified industries and store in the autonomous database
 
 ## Industries
 - Banking/Finance
@@ -78,7 +78,7 @@ Leaderboard should also display the score tally for "AI vs Humans"
 - Government
 
 ## UX/UI
-- refer to fraud-demo-react/react-ui-design-mockup.jsx
+- refer to ui-design-mockup/react-ui-design-mockup.jsx
 - AI chat window on the landing page where players can ask SELECT AI
 
 Examples:

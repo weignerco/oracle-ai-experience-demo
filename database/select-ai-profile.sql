@@ -3,20 +3,35 @@
 -- Target: Oracle Autonomous Database
 -- ==========================================================
 
--- 1. Create LLM Credential
+-- 1. Setup Network ACL
+----------------------------------------------------------
+-- Run this as ADMIN to allow the database to connect to Cohere.
+
+BEGIN
+    DBMS_NETWORK_ACL_ADMIN.APPEND_HOST_ACE(
+       host => 'api.cohere.ai',
+       ace  => xs$ace_type(privilege_list => xs$name_list('connect'),
+                           principal_name => 'ADMIN',
+                           principal_type => xs_acl.ptype_db)
+    );
+END;
+/
+
+-- 2. Create LLM Credential
 ----------------------------------------------------------
 -- PREREQUISITE: You must have a Cohere API Key.
 -- Run this as ADMIN or a user with DBMS_CLOUD privileges.
 
-/*
+
 BEGIN
   DBMS_CLOUD.CREATE_CREDENTIAL(
     credential_name => 'COHERE_CRED',
-    credential_details => '{ "token": "YOUR_COHERE_API_KEY" }'
+    username        => 'COHERE',
+    password        => 'YOUR_COHERE_API_KEY'
   );
 END;
 /
-*/
+
 
 -- 2. Create Select AI Profile
 ----------------------------------------------------------

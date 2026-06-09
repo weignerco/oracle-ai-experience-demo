@@ -22,23 +22,14 @@ Can you beat AI at enterprise decision-making?
     - *Alternatively*, you can run the SQL inserts found in `database/seed_data.sql`.
 
 ### 2. AI Configuration
-1.  In your SQL worksheet, create a credential for Cohere:
-    ```sql
-    BEGIN
-      DBMS_CLOUD.CREATE_CREDENTIAL(
-        credential_name => 'COHERE_CRED',
-        credential_details => '{ "token": "YOUR_COHERE_API_KEY" }'
-      );
-    END;
-    ```
-2.  Create the AI Profile using `database/select-ai-profile.sql`. This enables the natural language "Select AI" queries using the Cohere model.
+1.  Configure the **Select AI** profile and credentials by following the instructions and running the script in `database/select-ai-profile.sql`. This enables the natural language query features using the Cohere model.
 
 ### 3. Local Application Setup
 1.  **Clone the repository.**
 2.  **Create and Activate a Virtual Environment:**
     ```bash
     # Create the environment
-    python -m venv venv
+    python3 -m venv venv
 
     # Activate it (macOS/Linux)
     source venv/bin/activate

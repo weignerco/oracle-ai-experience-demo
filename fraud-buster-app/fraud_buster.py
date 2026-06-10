@@ -255,12 +255,12 @@ def get_connection():
 
     user = cfg("DB_USER", "FRAUD_USER")
     password = cfg("DB_PASSWORD")
-    dsn = cfg("DB_DSN", "starkapexdb_high")
+    dsn = cfg("DB_DSN")
     wallet_dir = cfg("WALLET_DIR", "adb_wallet")
     wallet_password = cfg("WALLET_PASSWORD", password)
 
-    if not password:
-        raise RuntimeError("Missing DB_PASSWORD. Add it to .streamlit/secrets.toml or environment variables.")
+    if not password or not dsn:
+        raise RuntimeError("Missing DB_PASSWORD or DB_DSN. Add them to .streamlit/secrets.toml or environment variables.")
 
     call_timeout = int(cfg("DB_CALL_TIMEOUT_MS", 60000))
 
